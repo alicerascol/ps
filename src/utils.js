@@ -33,7 +33,7 @@ const paymentsDefaultConfig = {
 };
 
 // Generic POST Helper
-const httpPost = (endpoint, data) =>
+const httpPost = (endpoint, data) => 
     fetch(`/${endpoint}`, {
         method: 'POST',
         headers: {
@@ -41,7 +41,9 @@ const httpPost = (endpoint, data) =>
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(response => response.json());
+    }).then(response => 
+        response.json()
+    );
 
 // Get all available payment methods from the local server
 const getPaymentMethods = () =>
@@ -61,6 +63,20 @@ const makePayment = (paymentMethod, config = {}) => {
     updateRequestContainer(paymentRequest);
 
     return httpPost('payments', paymentRequest)
+        .then(response => {
+            if (response.error) throw 'Payment initiation failed';
+
+            updateResponseContainer(response);
+
+            return response;
+        })
+        .catch(console.error);
+};
+
+// Posts a new payment using CT payment draft
+const makeCtAdyenPayment = (paymentCreditCardTemplate) => {
+
+    return httpPost('ctPostRequest', paymentCreditCardTemplate)
         .then(response => {
             if (response.error) throw 'Payment initiation failed';
 

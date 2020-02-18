@@ -17,25 +17,7 @@
                 <h1>Card Component</h1>
                 <div class="payment-method">
                     <div id="card-container" class="payment-method__container">
-                        <!-- Card Component will be rendered here -->
-                        <!-- <script type="text/javascript" src="https://test.adyen.com/hpp/cse/js/8015725260542849.shtml"></script>
-                        <form method="POST" action="[payment request handler]" id="adyen-encrypted-form">
-                            <input type="text" size="20" data-encrypted-name="number"/>
-                            <input type="text" size="20" data-encrypted-name="holderName"/>
-                            <input type="text" size="2" data-encrypted-name="expiryMonth"/>
-                            <input type="text" size="4" data-encrypted-name="expiryYear"/>
-                            <input type="text" size="4" data-encrypted-name="cvc"/>
-                            <input type="hidden" value="[generate this server side]" data-encrypted-name="generationtime"/>
-                            <input type="submit" value="Pay"/>
-                        </form>
-                        <script>
-                        // The form element to encrypt.
-                        var form = document.getElementById('adyen-encrypted-form');
-                        // See https://github.com/Adyen/CSE-JS/blob/master/Options.md for details on the options to use.
-                        var options = {};
-                        // Bind encryption options to the form.
-                        adyen.createEncryptedForm(form, options);
-                        </script> -->
+                    <div id="card-container_3d_secure" class="payment-method__container">
                     </div>
                 </div>
             </div>
@@ -99,6 +81,6 @@
     <script src="https://checkoutshopper-test.adyen.com/checkoutshopper/sdk/3.3.0/adyen.js"></script>
     <script src="../demo.js"></script>
     <script src="../utils.js"></script>
-    <script src="/card/card.js"></script>
+    <script src="/card_3d_secure/card_3d_secure.js"></script>
 </body>
 </html>

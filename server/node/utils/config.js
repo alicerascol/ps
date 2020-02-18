@@ -1,7 +1,4 @@
-const { CHECKOUT_APIKEY, MERCHANT_ACCOUNT } = process.env;
-
-const API_VERSION = 'v50';
-const CHECKOUT_URL = `https://checkout-test.adyen.com/${API_VERSION}`;
+const { CHECKOUT_APIKEY, MERCHANT_ACCOUNT, CHECKOUT_URL } = process.env;
 
 module.exports = {
     CHECKOUT_APIKEY,

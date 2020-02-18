@@ -5,7 +5,7 @@ module.exports = (endpoint, request) => {
         merchantAccount: MERCHANT_ACCOUNT,
         ...request
     });
-
+    console.log("getPostParams = " + body);
     return {
         body,
         url: `${CHECKOUT_URL}/${endpoint}`,

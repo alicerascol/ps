@@ -1,0 +1,35 @@
+{
+    "amountPlanned": {
+      "currencyCode": "EUR",
+      "centAmount":10000
+    },
+    "paymentMethodInfo": {
+      "method": "creditCard_3d",
+      "paymentInterface":	"ctp-adyen-integration"
+    },
+    "custom": {
+      "type": {
+          "typeId": "type",
+          "id": "d656ae17-3aff-4cf5-ac1d-185bff25ea81"
+      },
+      "fields": {
+          "countryCode": "GB",
+          "merchantReference": "cart_id",
+          "encryptedExpiryMonth": "${encryptedExpiryMonth}",
+          "encryptedExpiryYear": "${encryptedExpiryYear}",
+          "encryptedSecurityCode": "${encryptedSecurityCode}",
+          "encryptedCardNumber": "${encryptedCardNumber}",
+          "returnUrl": "http://localhost:3000/checkout/",
+          "browserInfo": "${browserInfo}"
+      }
+   }, 
+   "transactions": [{
+       "type": "Charge",
+       "state": "Initial",
+       "amount":{
+            "centAmount":10000,
+            "currencyCode":"EUR"
+        }
+   }]
+   
+  }
